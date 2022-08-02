@@ -16,8 +16,6 @@ export const GifExpertApp = () => {
 
   return (
     <>
-      <NavBar />
-
       <AddCategory onAddCategory={onAddCategory} />
 
       {

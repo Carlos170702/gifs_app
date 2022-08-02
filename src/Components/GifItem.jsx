@@ -1,7 +1,9 @@
-import { useEffect, useState } from "react"
+import PropTypes  from "prop-types";
+
+import { useState } from "react"
 
 export const GifItem = ({ url, title }) => {
-    const [image, setImage ] = useState('');
+    const [image, setImage] = useState('');
 
     setTimeout(() => {
         setImage(url)
@@ -10,10 +12,19 @@ export const GifItem = ({ url, title }) => {
     return (
 
         <div className="card">
+            <img className="img" src={url} alt={title} /> 
             {
-                (image )? <img className="img" src={url} alt={title} /> : (<span className="cargando"></span> )
+                (image) 
+                ? "hola"
+                : (<span className="cargando"></span>)
             }
             <h4>{title}</h4>
         </div>
     )
+}
+
+
+GifItem.propTypes = {
+    title: PropTypes.string.isRequired,
+    url  : PropTypes.string.isRequired,
 }
